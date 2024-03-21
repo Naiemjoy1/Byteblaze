@@ -2,7 +2,7 @@
 
 Live site:
 
-- [ByteBlaze](https://transcendent-gingersnap-4be0bf.netlify.app/blogs)
+- [ByteBlaze](https://transcendent-gingersnap-4be0bf.netlify.app/)
 
 Resources:
 
