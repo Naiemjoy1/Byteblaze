@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link, NavLink } from "react-router-dom";
 
 const Nav = () => {
 
@@ -20,20 +21,23 @@ const Nav = () => {
         }
     }
 
-    console.log(theme);
-
     return (
         <div className="navbar bg-base-100 shadow-lg px-4 ">
+            
             <div className="flex-1">
-                <a className="btn btn-ghost gap-0 text-secondary normal-case text-2xl">Byte<span className="text-primary">Blaze</span></a>
+                <Link to='/' className="btn btn-ghost gap-0 text-secondary normal-case text-2xl">
+                    Byte<span className="text-primary">Blaze</span>
+                </Link>
             </div>
+
             <div className="flex-none">
-                <ul className="menu menu-horizontal px-1">
-                    <li className=" font-bold"><a>Home</a></li>
-                    <li className=" font-bold text-primary"><a>Blogs</a></li>
-                    <li className=" font-bold"><a>Bookmarks</a></li>
+                <ul className="menu menu-horizontal px-1 hidden sm:flex gap-5">
+                    <NavLink to='/' className={({isActive}) => isActive? 'font-bold text-primary' : 'font-bold'}>Home</NavLink>
+                    <NavLink to='/blogs' className={({isActive}) => isActive? 'font-bold text-primary' : 'font-bold'}>Blogs</NavLink>
+                    <NavLink to='/bookmarks' className={({isActive}) => isActive? 'font-bold text-primary' : 'font-bold'}>Bookmarks</NavLink>
                 </ul>
-                <label className="cursor-pointer grid place-items-center">
+
+                <label className="cursor-pointer grid place-items-center ml-4">
                     <input
                     onChange={handleToggle}
                     type="checkbox"
